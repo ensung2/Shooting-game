@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미니게임스쿨</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @font-face {
+            font-family: 'KCCMurukmuruk';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCMurukmuruk.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'KyoboHand';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @media (max-width : 767px) {
+            #blind {
+                display: block;
+                background: #000;
+                position: fixed;
+                top: 0;
+                z-index: 50;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                text-align: center;
+            }
+
+            .blind_title>b {
+                display: inline-block;
+                padding-bottom: 30px;
+            }
+
+            .material-symbols-outlined {
+                font-size: 5rem;
+                padding-top: 200px;
+                padding-bottom: 50px;
+            }
+        }
+
+        @media (min-width : 768px) {
+            #blind {
+                display: none;
+            }
+        }
+
+
+        /* 기본 설정 */
+        * {
+            margin: 0 auto;
+            padding: 0 auto;
+            box-sizing: border-box;
+            font-family: KyoboHand;
+        }
+
+        /* 캔버스 설정 */
+        canvas {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            margin-left: -250px;
+            border: 3px solid #23a4ff;
+        }
+
+        /* 전체 틀 설정 */
+        #wrap {
+            max-width: 768px;
+            height: 700px;
+            background: url(./img/main01.jpg) no-repeat top center;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* header 설정 */
+        header {
+            width: 100%;
+            height: 60px;
+            display: inline-block;
+            padding: 20px 30px;
+        }
+
+        .main_logo {
+            justify-content: center;
+            font-family: KCCMurukmuruk;
+            font-size: 2rem;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .main_logo:hover {
+            color: #23a4ff;
+        }
+
+        /* copyrights 설정 */
+        .copyright {
+            display: flex;
+            height: 20px;
+            font-size: 12px;
+            color: #777;
+            justify-content: center;
+        }
+
+        /* game_intro 설정 */
+        .game_intro {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            height: 615px;
+            align-items: end;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div class="main_logo">뿅뿅빌런퇴치</div>
+        </header>
+        <!-- <canvas id="space"></canvas> -->
+        <div class="copyright">Copyright 2023. ensung2</div>
+        <div class="game_intro">
+            키보드 ←, → 를 사용하여 무빙!<br>
+            스페이스를 눌러서 총알을 날려서 내려오는 조별과제 빌런 처치!<br><br>
+        </div>
+    </div>
+
+    <!-- 창 크기 조절 -->
+    <div id="blind">
+        <div class="blind_title">
+            <span class="material-symbols-outlined">feedback</span><br>
+            <b style="font-size: 40px;">페이지 크기가 너무 작아요😥</b><br>
+            원활한 플레이를 위해 페이지 크기를 키워주세요!<br>(기본 가로 사이즈 : 768px)
+        </div>
+    </div>
+
+    <script src="Shooting_G.js"></script>
+</body>
+
+</html>
